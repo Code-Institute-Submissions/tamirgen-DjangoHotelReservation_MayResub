@@ -21,8 +21,6 @@ class RoomDetailView(View):
         form = AvailabilityForm()
         room_list = Room.objects.filter(category=category)
 
-        print(category)
-
         if len(room_list) > 0:
             room = room_list[0]
             room_category = dict(room.ROOM_CATEGORIES).get(room.category, None)
