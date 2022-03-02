@@ -27,7 +27,13 @@ def RoomListView(request):
 
 class BookingList(ListView):
     model = Booking
-    
+    def get_queryset(self, request, *args, **kwargs):
+        if self.request.is_stuff:
+            booking_list = Booking.objects.all()
+            return booking_list
+        else:
+            booking_list = Booking.objects.filter(user=self.request.user)
+            return booking_list
 
 
 class RoomDetailView(View):
