@@ -1,6 +1,5 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -48,7 +47,11 @@
                 <h2>Are you sure you would like to cancel your booking?
                     <br>
                     Details:</h2>
-                <h3> {{booking.room.number}} {{booking.get_room_category}} {{booking}}</h3>
+                <h3> Room Number:{{booking.room.number}}
+                    <br>
+                    Room Category:{{booking.get_room_category}} 
+                    <br>
+                       FROM {{booking.check_in}}  TO {{booking.check_out}}</h3>
                 <!-- Input Div -->
                 <div class="input-div">
                     <button type="submit">Cancel your booking</button>

@@ -4,23 +4,15 @@ from django.urls import reverse, reverse_lazy
 from .models import Room, Booking
 from .forms import AvailabilityForm
 from booking.booking_functions.availability import check_availability
-
-# Create your views here.
+from booking.booking_functions.get_room_cat_url_list import get_room_cat_url_list
+from booking.booking_functions.get_room_category_human_format import get_room_category_human_format
 
 
 def RoomListView(request):
-
-    room = Room.objects.all()[0]
-    room_categories = dict(room.ROOM_CATEGORIES)
-    room_values = room_categories.values()
-    room_list=[]
-    for room_category in room_categories:
-        room = room_categories.get(room_category)
-        room_url = reverse('booking:RoomDetailView', kwargs={'category': room_category})
-        room_list.append((room, room_url))
-
+    room_category_url_list = get_room_cat_url_list()
+    
     context={
-        "room_list":room_list,
+        "room_list":room_category_url_list,
     }    
     return render(request, 'room_list_view.html', context)
 
@@ -39,21 +31,28 @@ class BookingListView(ListView):
 
 
 class RoomDetailView(View):
-    def get(self, request, *args, **kwargs):
-        category = self.kwargs.get('category', None)
-        form = AvailabilityForm()
-        room_list = Room.objects.filter(category=category)
+    # A class based on a generic "View"
 
-        if len(room_list) > 0:
-            room = room_list[0]
-            room_category = dict(room.ROOM_CATEGORIES).get(room.category, None)
+
+    def get(self, request, *args, **kwargs):
+        '''
+        The function get the room category from kwargs
+        The function also get the human readable formt
+        Lastly, the function intialize an empty list 
+        and checks for invalid category names
+        '''
+        category = self.kwargs.get('category', None)
+        human_format_room_category = get_room_category_human_format(category)
+        form = AvailabilityForm()
+        if human_format_room_category is not None:
             context = {
-                'room_category': room_category,
+                'room_category': human_format_room_category,
                 'form': form,
             }
             return render(request, 'room_detail_view.html', context)
         else:
-            return HttpResponse('Category does not exist')
+            return HttpResponse('Category does not exist, please go back and choose a vaild category')
+
         
 
     def post(self, request, *args, **kwargs):
