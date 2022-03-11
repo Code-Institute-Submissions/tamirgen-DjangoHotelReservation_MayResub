@@ -6,6 +6,10 @@ from .forms import AvailabilityForm
 from booking.booking_functions.availability import check_availability
 from booking.booking_functions.get_room_cat_url_list import get_room_cat_url_list
 from booking.booking_functions.get_room_category_human_format import get_room_category_human_format
+from booking.booking_functions.get_available_rooms import get_available_rooms
+from booking.booking_functions.book_room import book_room
+
+
 
 
 def RoomListView(request):
@@ -33,8 +37,8 @@ class BookingListView(ListView):
 class RoomDetailView(View):
     # A class based on a generic "View"
 
-
     def get(self, request, *args, **kwargs):
+
         '''
         The function get the room category from kwargs
         The function also get the human readable formt
@@ -55,28 +59,26 @@ class RoomDetailView(View):
 
         
 
-    def post(self, request, *args, **kwargs):
+    def post(self, request, *args, **kwargs):\
+
+        '''
+        This function will check and book a room if available
+        It does so by getting to room category from kwargs
+        Then, pass request.POST into Availabilityform
+        Next, checking form vaildity and getting the available rooms
+        Lastly, if the room is available it books the first available room
+        '''
         category = self.kwargs.get('category', None)
-        room_list = Room.objects.filter(category=category)
         form = AvailabilityForm(request.POST)
 
         if form.is_valid():
             data = form.cleaned_data
 
-        available_rooms = []
-        for room in room_list:
-            if check_availability(room, data['check_in'], data['check_out']):
-                available_rooms.append(room)
+        available_rooms = get_available_rooms(category, data['check_in'], data['check_out'])
 
-        if len(available_rooms) > 0:
-            room = available_rooms[0]
-            booking = Booking.objects.create(
-                user=self.request.user,
-                room=room,
-                check_in=data['check_in'],
-                check_out=data['check_out']
-            )
-            booking.save()
+        if available_rooms is not None:
+            booking = book_room(request, available_rooms[0],
+                     data['check_in'], data['check_out'])
             return HttpResponse(booking)
         else:
             return HttpResponse('All of this category of rooms are booked!! Try another one')
