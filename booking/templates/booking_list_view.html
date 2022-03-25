@@ -29,6 +29,7 @@
 
         </div>
 
+         <!-- Div 2: Bookings -->
         <div class="bookings">
             {% for booking in booking_list %}
             <div class="booking">
@@ -49,13 +50,14 @@
                 <div class="capacity">
                     <h3>Capacity: {{booking.room.capacity}}</h3>
                 </div>
+                <!-- Booking Cancalation Div-->
                 <div class="cancel"><a href="{{booking.get_cancel_booking_url}}" class="invisible"><i
                             class="far fa-2x fa-times-circle"> Cancel
                             Booking</i></a></div>
 
-            </div>
+            </div> <!-- END Bookings Div -->
             {% endfor %}
-        </div>
+        </div> <!-- END Main Content Div -->
 </body>
 
 </html>

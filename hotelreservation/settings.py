@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-# import dj_database_url
+import dj_database_url
 if os.path.isfile("env.py"):
     import env
 
@@ -110,20 +110,20 @@ WSGI_APPLICATION = 'hotelreservation.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
-# }
-
 DATABASES = {
-    'default': {
-        'ENGINE'  : 'django.db.backends.mysql', # <-- UPDATED line
-        'NAME'    : 'hotel',                 # <-- UPDATED line
-        'USER'    : 'root',                     # <-- UPDATED line
-        'PASSWORD': '123456789',              # <-- UPDATED line
-        'HOST'    : 'localhost',                # <-- UPDATED line
-        'PORT'    : '3306',
-    }
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE'  : 'django.db.backends.mysql', # <-- UPDATED line
+#         'NAME'    : 'hotel',                 # <-- UPDATED line
+#         'USER'    : 'root',                     # <-- UPDATED line
+#         'PASSWORD': '123456789',              # <-- UPDATED line
+#         'HOST'    : 'localhost',                # <-- UPDATED line
+#         'PORT'    : '3306',
+#     }
+# }
 
 
 # Password validation

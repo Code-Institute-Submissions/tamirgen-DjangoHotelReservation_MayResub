@@ -75,7 +75,7 @@ class RoomDetailView(View):
             context = {
                 'room_category': human_format_room_category,
                 'form': form,
-                'error': 'You are not signed in!!!!!!!!!'
+                'error': 'You are not signed in, to make a booking plaese sign in'
             }
             return render(request, 'room_detail_view.html', context)
         form = AvailabilityForm(request.POST)
