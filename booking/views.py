@@ -2,13 +2,14 @@ from django.shortcuts import render, HttpResponse
 from django.views.generic import ListView, FormView, View, DeleteView
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse, reverse_lazy
-from .models import Room, Booking
+from .models import Room, Booking, Room_Categories
 from .forms import AvailabilityForm
 from booking.booking_functions.availability import check_availability
 from booking.booking_functions.get_room_cat_url_list import get_room_cat_url_list
 from booking.booking_functions.get_room_category_human_format import get_room_category_human_format
 from booking.booking_functions.get_available_rooms import get_available_rooms
 from booking.booking_functions.book_room import book_room
+
 
 def RoomListView(request):
     room_category_url_list = get_room_cat_url_list()
