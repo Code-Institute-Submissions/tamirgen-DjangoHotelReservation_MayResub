@@ -42,22 +42,24 @@ class RoomDetailViewTest(TestCase):
         self.user = User.objects.create_user(
             username='tamir', email='tamir@gmail.com', password='secret')
 
-
-
     def test_details(self):
-        request = self.factory.get('/room/<single>')
+        request = self.factory.get('/room/single')
         request.user = self.user
         response = RoomDetailView.as_view()(request)
         self.assertEqual(response.status_code, 200)
 
-
-
-class test(TestCase):
+"Test the booking form is working"
+class BookingTest(TestCase):
     def setUp(self):
         self.factory = RequestFactory()
         self.user = User.objects.create_user(
             username='tamir', email='tamir@gmail.com', password='secret')
 
     def test_details(self):
-        cat = Room_Categories.objects.create(name='single', description='single')
-        self.assertEqual(cat.pk, 1)
+        request = self.factory.post('/room/single')
+        request.user = self.user
+        response = RoomDetailView.as_view()(request)
+        self.assertEqual(response.status_code, 200)        
+
+
+

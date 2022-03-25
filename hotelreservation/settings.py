@@ -106,6 +106,8 @@ WSGI_APPLICATION = 'hotelreservation.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
+#Configure  memory DB for running testing
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',

@@ -81,15 +81,17 @@ class RoomDetailView(View):
         if form.is_valid():
             data = form.cleaned_data
 
-        available_rooms = get_available_rooms(category, data['check_in'], data['check_out'])
+            available_rooms = get_available_rooms(category, data['check_in'], data['check_out'])
 
-        if available_rooms is not None:
-            booking = book_room(request, available_rooms[0],
-                     data['check_in'], data['check_out'])
+            if available_rooms is not None:
+                booking = book_room(request, available_rooms[0],
+                        data['check_in'], data['check_out'])
 
-            return render(request, 'booking_confirmation_view.html', {'booking': booking})
+                return render(request, 'booking_confirmation_view.html', {'booking': booking})
+            else:
+                return HttpResponse('All of this category of rooms are booked!! Try another one')
         else:
-            return HttpResponse('All of this category of rooms are booked!! Try another one')
+            return HttpResponse('Invalid action')       
 
 class CancelBookingView(DeleteView):
     model = Booking
