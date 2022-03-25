@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from django.views.generic import ListView, FormView, View, DeleteView
+from django.contrib.auth.decorators import login_required
 from django.urls import reverse, reverse_lazy
 from .models import Room, Booking
 from .forms import AvailabilityForm
@@ -9,15 +10,11 @@ from booking.booking_functions.get_room_category_human_format import get_room_ca
 from booking.booking_functions.get_available_rooms import get_available_rooms
 from booking.booking_functions.book_room import book_room
 
-
-
-
 def RoomListView(request):
     room_category_url_list = get_room_cat_url_list()
-    
     context={
         "room_list":room_category_url_list,
-    }    
+       }
     return render(request, 'room_list_view.html', context)
 
 
@@ -75,7 +72,7 @@ class RoomDetailView(View):
             context = {
                 'room_category': human_format_room_category,
                 'form': form,
-                'error': 'You are not signed in, to make a booking plaese sign in'
+                'error': 'You are not signed in!!!!!!!!!'
             }
             return render(request, 'room_detail_view.html', context)
         form = AvailabilityForm(request.POST)
@@ -92,7 +89,6 @@ class RoomDetailView(View):
             return render(request, 'booking_confirmation_view.html', {'booking': booking})
         else:
             return HttpResponse('All of this category of rooms are booked!! Try another one')
-
 
 class CancelBookingView(DeleteView):
     model = Booking
