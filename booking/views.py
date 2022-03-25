@@ -52,14 +52,13 @@ class RoomDetailView(View):
             context = {
                 'room_category': human_format_room_category,
                 'form': form,
+                'error': ''
             }
             return render(request, 'room_detail_view.html', context)
         else:
             return HttpResponse('Category does not exist, please go back and choose a vaild category')
 
-        
-
-    def post(self, request, *args, **kwargs):\
+    def post(self, request, *args, **kwargs):
 
         '''
         This function will check and book a room if available
@@ -69,6 +68,16 @@ class RoomDetailView(View):
         Lastly, if the room is available it books the first available room
         '''
         category = self.kwargs.get('category', None)
+        human_format_room_category = get_room_category_human_format(category)
+        form = AvailabilityForm()
+
+        if not request.user.is_authenticated:
+            context = {
+                'room_category': human_format_room_category,
+                'form': form,
+                'error': 'You are not signed in!!!!!!!!!'
+            }
+            return render(request, 'room_detail_view.html', context)
         form = AvailabilityForm(request.POST)
 
         if form.is_valid():
@@ -79,9 +88,11 @@ class RoomDetailView(View):
         if available_rooms is not None:
             booking = book_room(request, available_rooms[0],
                      data['check_in'], data['check_out'])
-            return HttpResponse(booking)
+
+            return render(request, 'booking_confirmation_view.html', {'booking': booking})
         else:
             return HttpResponse('All of this category of rooms are booked!! Try another one')
+
 
 class CancelBookingView(DeleteView):
     model = Booking

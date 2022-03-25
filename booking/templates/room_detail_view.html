@@ -1,5 +1,8 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
+
+{% block content %}
+
 <html lang="en">
 
 <head>
@@ -34,11 +37,8 @@
 
             <!-- Div 2: Room Information -->
             <div class="room-info">
-                <h1>{{room_category}}</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id optio rem saepe culpa architecto tempora
-                    numquam debitis reiciendis! Quaerat laudantium consequuntur doloribus quod placeat consectetur
-                    veniam,
-                    rerum repellendus magnam labore. </p>
+                <h1>{{room_category.name}}</h1>
+                <p>{{room_category.description}}</p>
             </div>
 
             <!-- Div 3: Room Booking Form -->
@@ -64,9 +64,10 @@
                 </div>
 
             </form>
-
+            <div class="input-div" class="error" style="color:red;">{{error}}</div>
         </div> <!-- END Room Div -->
 
     </div> <!-- END Main Content Div -->
 
 </body>
+{% endblock content %}
