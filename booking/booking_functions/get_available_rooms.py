@@ -1,4 +1,4 @@
-from booking.models import Room
+from booking.models import Room, Room_Categories
 from .availability import check_availability
 
 def get_available_rooms(category, check_in, check_out):
@@ -7,7 +7,8 @@ def get_available_rooms(category, check_in, check_out):
     Initiate an empty list
     Populate the list and check for list length
     '''
-    room_list = Room.objects.filter(category=category)
+    categoryObj = Room_Categories.objects.get(name=category)
+    room_list = Room.objects.filter(category=categoryObj)
     
     available_rooms = []
 

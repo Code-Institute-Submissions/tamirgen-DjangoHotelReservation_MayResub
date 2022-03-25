@@ -1,108 +1,166 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# HMS- Hotel Management System
+------------------
 
-Welcome tamirgen,
+The hotel management system is a system designed for users to be able to book rooms, see a list of booked rooms, and cancel a booking.
+The Admin of the system can see a list of booked rooms and is able to cancel bookings on the Admin panel. He can also add rooms, get a list of users' emails and see all authenticated users.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+[Here is a link to the live version of the game](https://tic-tac-toe-tamir.herokuapp.com/)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+![Responsive Mockup](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/tic-tac-toe-AMIresponsive.jpg?raw=true)
 
-## Gitpod Reminders
+<br>
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## How the user make a booking
+--------------
 
-`python3 -m http.server`
+The booking flow is very simple and intuitive
+1. The user must create an account or be logged in if he has an account.
+2. The user is presented with a list of room types
+3. The user selects a room and transferred to the room booking page.
+4. The user selects check-in and check-out dates and hours.
+5. If the room is available, he will be transferred to a "Thank you" page that has a successful booking massage. If the room is not available, he will get a message that the room is not available and he should select a different category.
 
-A blue button should appear to click: _Make Public_,
+- In cases that the user is not logged in, he will get a message that he needs to be logged in before he can make a booking in the room details page. 
 
-Another blue button should appear to click: _Open Browser_.
+<br>
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## Existing Features
+--------------------
+<br>
 
-A blue button should appear to click: _Make Public_,
+### User Features:
+- Create an account\log in to existing account
 
-Another blue button should appear to click: _Open Browser_.
+<br>
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+![players names](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-ask-for-names.jpg?raw=true)
 
-To log into the Heroku toolbelt CLI:
+- Select a room from the rooms category
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+<br>
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+![board printed](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-show-board-and-inst.jpg?raw=true)
 
-------
+- Make a booking
+  * Choose check-in date and time
+  * Choose check-out date and time
+  * Click the "Book the Room" button
 
-## Release History
+ <br>
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+ ![validation check](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-illegal-moves.jpg?raw=true)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+- If the the room is available, he will be transffered to a confirmation page
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+<br>
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+![validation check](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-illegal-moves.jpg?raw=true)
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+- If the room is booked, he will get an error massage
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+<br>
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+![winner announce](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-announce-the-winner.jpg?raw=true)
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+<br>
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- Cancel a booking
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+![winner announce](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-announce-the-winner.jpg?raw=true)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+<br>
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### Admin Features
+------------------
+- A list of booked room is presented in the Admin panel under "Bookings". An Admin can delete the booking.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+<br>
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+![winner announce](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-announce-the-winner.jpg?raw=true)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+<br>
 
-------
+- A list of email address is presented in the Admin panel under "Email Addresses". The Admin can remove an email or mark it as verified.
 
-## FAQ about the uptime script
+<br>
 
-**Why have you added this script?**
+![winner announce](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-announce-the-winner.jpg?raw=true)
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+<br>
 
-**How will this affect me?**
+- A list of users is presented in the Admin panel under "Users". The Admin can remove a user.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+<br>
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+![winner announce](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-announce-the-winner.jpg?raw=true)
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+<br>
 
-**So….?**
+- A list of rooms and their prospective numbers is presented in the Admin panel under "Rooms". The Admin can remove or add a room.
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+<br>
 
-**Can I opt out?**
+![winner announce](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-announce-the-winner.jpg?raw=true)
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+### Future Features
+-------------------
+- Add payment system to booking process.
+- Comment box for special needs
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
 
-**Anything more?**
+## Data Model
+--------------
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+I have used three classes for this project:
+- Board class is in charge of:
+   * Creating the board.
+   * Handling and checking the legal moves.
+   * Checking turns between the players.
 
----
+- Player class is in charge of:
+   * Holding the players names and markers.
+   * Getting information from a function in Board class and printing the illegal move statement.
 
-Happy coding!
+- Game class is in charge of:
+   * Swapping turns between players.
+   * Holding the actual game.
+   * Checking and announcing the winner or calling for a draw.
+
+   <br>
+
+## Testing
+-----------
+
+I have manualy tested my project by doing the following:
+- Passed the code through PEP8 and made sure it is error free.
+- Given invalid inputs: numbers that are not 0-8, letters instead of numbers and the same number twice.
+- Tested in my local terminal and the Heroku terminal.
+- Tested on an Android tablet and IOS smartphone.
+
+<br>
+
+## Bugs
+--------
+
+There were no bugs to fix.
+
+<br>
+
+## Deployment
+--------------
+
+The project was deployed using the Code Institute's mock terminal from Heroku.
+The steps to deploy:
+  * Fork or clone this repository.
+  * Create new app on Heroku.
+  * Add a key: PORT and value: 8000 to the Config Vars.
+  * Set the buildback to "Python" and "NodeJS" in that order.
+  * Link the Heroku app to the project repository.
+  * Click on <b>Deploy<b>
+
+<br>
+
+## Credit
+----------
+- Code Institue for the deployment terminal.
+- Wikipedia for the details on Tic-Tac-Toe
