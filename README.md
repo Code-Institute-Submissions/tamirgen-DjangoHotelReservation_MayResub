@@ -48,7 +48,7 @@ The booking flow is very simple and intuitive
 
  <br>
 
- ![room details and date selection](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-illegal-moves.jpg?raw=true)
+ ![room details and date selection](https://github.com/tamirgen/DjangoHotelReservation/blob/main/booking/assests/media/room-details-dates.jpg?raw=true)
 
 - If the the room is available, he will be transferred to a confirmation page
 
@@ -84,7 +84,7 @@ The booking flow is very simple and intuitive
 
 <br>
 
-![admin panel email addresses list](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-announce-the-winner.jpg?raw=true)
+![admin panel email addresses list](https://github.com/tamirgen/DjangoHotelReservation/blob/main/booking/assests/media/admin-email-addresses.jpg?raw=true)
 
 <br>
 
@@ -92,7 +92,7 @@ The booking flow is very simple and intuitive
 
 <br>
 
-![admin panel users list](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-announce-the-winner.jpg?raw=true)
+![admin panel users list](https://github.com/tamirgen/DjangoHotelReservation/blob/main/booking/assests/media/admin-users-list.jpg?raw=true)
 
 <br>
 
@@ -100,7 +100,7 @@ The booking flow is very simple and intuitive
 
 <br>
 
-![admin panel room list](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-announce-the-winner.jpg?raw=true)
+![admin panel room list](https://github.com/tamirgen/DjangoHotelReservation/blob/main/booking/assests/media/admin-room-list.jpg?raw=true)
 
 ### Future Features
 -------------------
