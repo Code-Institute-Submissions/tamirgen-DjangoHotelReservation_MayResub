@@ -1,6 +1,7 @@
 from django.urls import path, include
-from .views import RoomListView, BookingListView, RoomDetailView, CancelBookingView
-
+from .views import ( 
+    RoomListView, BookingListView, RoomDetailView, CancelBookingView
+)
 app_name = 'booking'
 
 urlpatterns = [ 
