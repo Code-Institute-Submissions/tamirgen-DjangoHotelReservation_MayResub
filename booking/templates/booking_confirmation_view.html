@@ -4,11 +4,6 @@
 {% block content %}
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Room Detail</title>
-    <script src="https://kit.fontawesome.com/692189991f.js" crossorigin="anonymous"></script>
-
     <!-- Main StyleSheet -->
     <link type="text/css" rel="stylesheet" href="{% static 'booking/css/room_detail_view.css' %}">
 
@@ -28,13 +23,7 @@
         <!-- Booking Details -->
         <div class="room">
 
-            <!-- Div 1: Back to Home -->
-            <div class="home">
-                <a href="{% url 'booking:RoomListView' %}"><i class="fas fa-arrow-alt-circle-left">Home</i></a>
-            </div>
-
-
-            <!-- Div 2: Room Confirmation -->
+            <!-- Div: Room Confirmation -->
             <form id="booking-form" action="" method="POST">
 
                 {% csrf_token %}

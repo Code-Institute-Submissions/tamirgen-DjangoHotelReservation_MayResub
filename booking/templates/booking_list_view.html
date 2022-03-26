@@ -3,13 +3,7 @@
 
 {% block content %}
 
-<html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking List</title>
-    <script src="https://kit.fontawesome.com/692189991f.js" crossorigin="anonymous"></script>
     <link type="text/css" rel="stylesheet" href="{% static 'booking/css/booking_list_view.css' %}">
 </head>
 
@@ -20,16 +14,9 @@
                 <h1>Your Bookings</h1>
                 <h2>Welcome dear {{user}}</h2>
             </div>
-            <div class="home">
-                <!-- Div 1: Back to Home -->
-                <div class="home">
-                    <a href="{% url 'booking:RoomListView' %}"><i class="fas fa-arrow-alt-circle-left">Home</i></a>
-                </div>
-            </div>
+         </div>
 
-        </div>
-
-         <!-- Div 2: Bookings -->
+         <!-- Div: Bookings -->
         <div class="bookings">
             {% for booking in booking_list %}
             <div class="booking">

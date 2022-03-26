@@ -145,7 +145,7 @@ I have manually tested my project by doing the following:
    - Test 1: Test if room_list_view page is loading.
    - Test 2: Test if booking_list_view is loading if the user is logged-in.
    - Test 3: Test if room_detail_view loads for any user.
-   - Test 4: 
+   - Test 4: Test the booking form is working
 - Tested in my local terminal and the Heroku terminal.
 - Tested on an Android tablet and IOS smartphone.
 
