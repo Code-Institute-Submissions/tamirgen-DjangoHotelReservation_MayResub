@@ -4,9 +4,9 @@
 The hotel management system is a system designed for users to be able to book rooms, see a list of booked rooms, and cancel a booking.
 The Admin of the system can see a list of booked rooms and is able to cancel bookings on the Admin panel. He can also add rooms, get a list of users' emails and see all authenticated users.
 
-[Here is a link to the live version of the game](https://tic-tac-toe-tamir.herokuapp.com/)
+[Here is a link to the live version of the App](https://django-hotel-booking.herokuapp.com/)
 
-![Responsive Mockup](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/tic-tac-toe-AMIresponsive.jpg?raw=true)
+![Responsive Mockup](https://github.com/tamirgen/DjangoHotelReservation/blob/main/booking/assests/media/am-I-responsive-screenshot.jpg?raw=true)
 
 <br>
 
@@ -33,13 +33,13 @@ The booking flow is very simple and intuitive
 
 <br>
 
-![players names](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-ask-for-names.jpg?raw=true)
+![account creation and log-in panel](https://github.com/tamirgen/DjangoHotelReservation/blob/main/booking/assests/media/log-in.jpg?raw=true)
 
 - Select a room from the rooms category
 
 <br>
 
-![board printed](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-show-board-and-inst.jpg?raw=true)
+![room categories](https://github.com/tamirgen/DjangoHotelReservation/blob/main/booking/assests/media/select-a-room.jpg?raw=true)
 
 - Make a booking
   * Choose check-in date and time
@@ -48,25 +48,25 @@ The booking flow is very simple and intuitive
 
  <br>
 
- ![validation check](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-illegal-moves.jpg?raw=true)
+ ![room details and date selection](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-illegal-moves.jpg?raw=true)
 
 - If the the room is available, he will be transferred to a confirmation page
 
 <br>
 
-![validation check](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-illegal-moves.jpg?raw=true)
+![confirmation page](https://github.com/tamirgen/DjangoHotelReservation/blob/main/booking/assests/media/room-booking-confirmation.jpg?raw=true)
 
 - If the room is booked, he will get an error message
 
 <br>
 
-![winner announce](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-announce-the-winner.jpg?raw=true)
+![room error massage](https://github.com/tamirgen/DjangoHotelReservation/blob/main/booking/assests/media/sing-in-error-for-room-booking.jpg?raw=true)
 
 <br>
 
 - Cancel a booking
 
-![winner announce](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-announce-the-winner.jpg?raw=true)
+![room canceltion](https://github.com/tamirgen/DjangoHotelReservation/blob/main/booking/assests/media/room-cancaltion-page.jpg?raw=true)
 
 <br>
 
@@ -76,7 +76,7 @@ The booking flow is very simple and intuitive
 
 <br>
 
-![winner announce](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-announce-the-winner.jpg?raw=true)
+![admin panel booking list](https://github.com/tamirgen/DjangoHotelReservation/blob/main/booking/assests/media/room-cancaltion-page.jpg?raw=true)
 
 <br>
 
@@ -84,7 +84,7 @@ The booking flow is very simple and intuitive
 
 <br>
 
-![winner announce](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-announce-the-winner.jpg?raw=true)
+![admin panel email addresses list](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-announce-the-winner.jpg?raw=true)
 
 <br>
 
@@ -92,7 +92,7 @@ The booking flow is very simple and intuitive
 
 <br>
 
-![winner announce](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-announce-the-winner.jpg?raw=true)
+![admin panel users list](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-announce-the-winner.jpg?raw=true)
 
 <br>
 
@@ -100,7 +100,7 @@ The booking flow is very simple and intuitive
 
 <br>
 
-![winner announce](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-announce-the-winner.jpg?raw=true)
+![admin panel room list](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-announce-the-winner.jpg?raw=true)
 
 ### Future Features
 -------------------
