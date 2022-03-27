@@ -173,17 +173,25 @@ There were no bugs to fix.
 --------------
 
 The project was deployed using the Code Institute's mock terminal from Heroku.
-The steps to deploy:
-  * Fork or clone this repository.
-  * Create a new app on Heroku.
-  * Add a key: PORT and value: 8000 to the Config Vars.
-  * Set the buildback to "Python" and "NodeJS" in that order.
-  * Link the Heroku app to the project repository.
-  * Click on <b>Deploy<b>
+The steps to deploy at the beginning of the project:
+* Create the Heroku app
+* Attach the database
+* Prepare our environment and settings.py file
+
+<br>
+
+The steps to deploy at the end of the project:
+* Set the debug flag to False in settings.py
+* Add X_FRAME_OPTIONS = 'SAMEORIGIN' to settings.py
+* Make the final deployment commit and push
+* In Heroku remove from the config var the DISABLE_COLLECTSTATIC=1
+* Deploy the branch
+
+  
 
 <br>
 
 ## Credit
 ----------
 - Code Institute for the deployment terminal.
-- Wikipedia for the details on Tic-Tac-Toe
+- Parts of the project are base on vidoes for the YouTube channel DarshanDev.
