@@ -5,17 +5,22 @@ from django.urls import reverse, reverse_lazy
 from .models import Room, Booking, Room_Categories
 from .forms import AvailabilityForm
 from booking.booking_functions.availability import check_availability
-from booking.booking_functions.get_room_cat_url_list import get_room_cat_url_list
-from booking.booking_functions.get_room_category_human_format import get_room_category_human_format
+from booking.booking_functions.get_room_cat_url_list import (
+    get_room_cat_url_list
+)
+from booking.booking_functions.get_room_category_human_format import (
+    get_room_category_human_format
+)
 from booking.booking_functions.get_available_rooms import get_available_rooms
+
 from booking.booking_functions.book_room import book_room
 
 
 def RoomListView(request):
     room_category_url_list = get_room_cat_url_list()
-    context={
-        "room_list":room_category_url_list,
-       }
+    context = {
+        "room_list": room_category_url_list,
+    }
     return render(request, 'room_list_view.html', context)
 
 
@@ -40,7 +45,7 @@ class RoomDetailView(View):
         '''
         The function get the room category from kwargs
         The function also get the human readable formt
-        Lastly, the function intialize an empty list 
+        Lastly, the function intialize an empty list
         and checks for invalid category names
         '''
         category = self.kwargs.get('category', None)
@@ -54,7 +59,8 @@ class RoomDetailView(View):
             }
             return render(request, 'room_detail_view.html', context)
         else:
-            return HttpResponse('Category does not exist, please go back and choose a vaild category')
+            return HttpResponse('Category does not exist,\
+                please go back and choose a vaild category')
 
     def post(self, request, *args, **kwargs):
 
@@ -81,17 +87,24 @@ class RoomDetailView(View):
         if form.is_valid():
             data = form.cleaned_data
 
-            available_rooms = get_available_rooms(category, data['check_in'], data['check_out'])
+            available_rooms = get_available_rooms(
+                                category, data['check_in'], data['check_out'])
 
             if available_rooms is not None:
-                booking = book_room(request, available_rooms[0],
-                        data['check_in'], data['check_out'])
+                booking = book_room(
+                            request, available_rooms[0],
+                            data['check_in'], data['check_out']
+                )
 
-                return render(request, 'booking_confirmation_view.html', {'booking': booking})
+                return render(
+                        request, 'booking_confirmation_view.html',
+                        {'booking': booking})
             else:
-                return HttpResponse('All of this category of rooms are booked!! Try another one')
+                return HttpResponse('All of this category of rooms are booked!! \
+                    Try another one')
         else:
-            return HttpResponse('Invalid action')       
+            return HttpResponse('Invalid action')
+
 
 class CancelBookingView(DeleteView):
     model = Booking

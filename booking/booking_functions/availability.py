@@ -9,5 +9,5 @@ def check_availability(room, check_in, check_out):
         if booking.check_in > check_out or booking.check_out < check_in:
             avail_list.append(True)
         else:
-            avail_list.append(False)  
+            avail_list.append(False)
     return all(avail_list)

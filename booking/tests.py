@@ -4,7 +4,8 @@ from django.test import RequestFactory, TestCase
 from .models import Room_Categories
 from .views import RoomListView, BookingListView, RoomDetailView
 
-" Test if room_list_view page is loading"
+
+# Test if room_list_view page is loading
 class RoomListViewTest(TestCase):
     def setUp(self):
         self.factory = RequestFactory()
@@ -22,7 +23,8 @@ class RoomListViewTest(TestCase):
     def tearDown(self):
         Room_Categories.objects.all().delete()
 
-"Test if booking_list_view is loading if the user is logged-in"
+
+# Test if booking_list_view is loading if the user is logged-in
 class BookingListViewTest(TestCase):
     def setUp(self):
         self.factory = RequestFactory()
@@ -35,7 +37,8 @@ class BookingListViewTest(TestCase):
         response = BookingListView.as_view()(request)
         self.assertEqual(response.status_code, 200)
 
-"Test if room_detail_view loads for any user"
+
+# Test if room_detail_view loads for any user
 class RoomDetailViewTest(TestCase):
     def setUp(self):
         self.factory = RequestFactory()
@@ -48,7 +51,8 @@ class RoomDetailViewTest(TestCase):
         response = RoomDetailView.as_view()(request)
         self.assertEqual(response.status_code, 200)
 
-"Test the booking form is working"
+
+# Test the booking form is working
 class BookingTest(TestCase):
     def setUp(self):
         self.factory = RequestFactory()
@@ -59,7 +63,4 @@ class BookingTest(TestCase):
         request = self.factory.post('/room/single')
         request.user = self.user
         response = RoomDetailView.as_view()(request)
-        self.assertEqual(response.status_code, 200)        
-
-
-
+        self.assertEqual(response.status_code, 200)

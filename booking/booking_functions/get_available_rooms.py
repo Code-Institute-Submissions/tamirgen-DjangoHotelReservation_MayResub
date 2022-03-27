@@ -1,6 +1,7 @@
 from booking.models import Room, Room_Categories
 from .availability import check_availability
 
+
 def get_available_rooms(category, check_in, check_out):
     '''
     Function that takes category and returns Room List
@@ -9,7 +10,7 @@ def get_available_rooms(category, check_in, check_out):
     '''
     categoryObj = Room_Categories.objects.get(name=category)
     room_list = Room.objects.filter(category=categoryObj)
-    
+
     available_rooms = []
 
     for room in room_list:
