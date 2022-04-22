@@ -107,6 +107,10 @@ The booking flow is very simple and intuitive
 - Add a payment system to the booking process.
 - Comment box for special needs
 
+### Authentication Features
+---------------------------
+- As part of the project security measures, if a customer is not logged in, the booking form will be visible in the room_detail_view.html and instead, he will be asked to signup or login with links to the respective pages.
+
 
 ## Data Model
 --------------
