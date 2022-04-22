@@ -3,11 +3,11 @@
 
 {% block content %}
 
-<head>
+{% block extra_css %}
     <link type="text/css" rel="stylesheet" href="{% static 'booking/css/booking_list_view.css' %}">
-</head>
+{% endblock %}
 
-<body>
+
     <div class="content">
         <div class="header">
             <div class="headings">
@@ -44,8 +44,8 @@
 
             </div> <!-- END Bookings Div -->
             {% endfor %}
-        </div> <!-- END Main Content Div -->
-</body>
+          </div> <!-- END Main Content Div -->
+    </div>
 
-</html>
+
 {% endblock content %}

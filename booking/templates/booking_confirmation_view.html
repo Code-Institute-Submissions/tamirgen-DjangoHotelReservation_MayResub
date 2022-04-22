@@ -3,13 +3,10 @@
 
 {% block content %}
 
-<head>
+{% block extra_css %}
     <!-- Main StyleSheet -->
     <link type="text/css" rel="stylesheet" href="{% static 'booking/css/room_detail_view.css' %}">
-
-</head>
-
-<body>
+{% endblock %}
 
     <!-- Main Content -->
     <div class="content">
@@ -44,5 +41,4 @@
 
     </div> <!-- END Main Content Div -->
 
-</body>
 {% endblock content %}

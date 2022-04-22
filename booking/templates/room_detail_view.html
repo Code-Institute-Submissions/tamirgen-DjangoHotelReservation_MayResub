@@ -3,13 +3,13 @@
 
 {% block content %}
 
-<head>
+{% block extra_css %}
     <!-- Main StyleSheet -->
     <link type="text/css" rel="stylesheet" href="{% static 'booking/css/room_detail_view.css' %}">
+{% endblock %}
 
-</head>
 
-<body>
+
 
     <!-- Main Content -->
     <div class="content">
@@ -17,7 +17,7 @@
         <!-- Room Image -->
         <div class="image">
             <img
-                src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">
+                src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="room image">
         </div>
 
         <!-- Room Details -->
@@ -30,7 +30,7 @@
             </div>
 
             <!-- Div: Room Booking Form -->
-            <form id="booking-form" action="" method="POST">
+            <form id="booking-form" method="POST">
 
                 {% csrf_token %}
 
@@ -54,10 +54,9 @@
             </form>
 
             <!-- Error Massage Div-->
-            <div class="input-div" class="error" style="color:red;">{{error}}</div>
+            <div class="input-div" style="color:red;">{{error}}</div>
         </div> <!-- END Room Details Div -->
 
     </div> <!-- END Main Content Div -->
 
-</body>
 {% endblock content %}
