@@ -110,7 +110,9 @@ The booking flow is very simple and intuitive
 ### Authentication Features
 ---------------------------
 - As part of the project security measures, if a customer is not logged in, the booking form will be visible in the room_detail_view.html and instead, he will be asked to signup or login with links to the respective pages.
+<br>
 
+![room deatils page when not logged in](https://github.com/tamirgen/DjangoHotelReservation/blob/main/booking/assests/media/room-details-not-logedin%20.jpg?raw=true)
 
 ## Data Model
 --------------
