@@ -34,5 +34,8 @@ class Booking(models.Model):
     def get_cancel_booking_url(self):
         return reverse_lazy('booking:CancelBookingView', args=[self.pk, ])
 
+    def get_update_booking_url(self):
+        return reverse_lazy('booking:UpdateBookingView', args=[self.pk, ])    
+
     def get_room_category(self):
         return f'{self.room.category.name}'

@@ -36,7 +36,7 @@ DEBUG = True
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['django-hotel-booking.herokuapp.com', 'localhost','127.0.0.1']
+ALLOWED_HOSTS = ['django-hotel-booking.herokuapp.com','127.0.0.1', 'localhost']
 
 
 # Application definition

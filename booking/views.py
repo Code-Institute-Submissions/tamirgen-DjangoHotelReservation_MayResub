@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse
-from django.views.generic import ListView, FormView, View, DeleteView
+from django.views.generic import ListView, FormView, View, DeleteView, UpdateView
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse, reverse_lazy
 from .models import Room, Booking, Room_Categories
@@ -109,4 +109,13 @@ class RoomDetailView(View):
 class CancelBookingView(DeleteView):
     model = Booking
     template_name = 'booking_cancel_view.html'
+    success_url = reverse_lazy('booking:BookingListView')
+
+
+class UpdateBookingView(UpdateView):
+    model = Booking
+    fields = [
+        'check_in','check_out'
+    ]
+    template_name = 'booking_update_view.html'
     success_url = reverse_lazy('booking:BookingListView')
