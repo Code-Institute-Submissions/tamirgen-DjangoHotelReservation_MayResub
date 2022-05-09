@@ -382,46 +382,47 @@ There are three database models:
 ### Common Elements Testing:
 ----------------------------
 
-   - All Pages clickable elements were tested manually and are functioning and doing what they were designed to do.
+  - All Pages clickable elements were tested manually and are functioning and doing what they were designed to do.
         
-        - **Header**
+      - **Header**
 
             - Clicking on the hotel name or "Home" will bring the customer back to the landing page.
 
-        - **Navigation Bar**
+      - **Navigation Bar**
 
             - Hovering on the different navigation bar's links will trigger the hover effect, highlighting the link for the customer.
 
             - Clicking on the navigation bar's links will bring the customer to the specified page.
         
-        - **Footer**
+      - **Footer**
         
             - Clicking on the social media links will open the specific website on a new tab(not working at the moment).
 
-         - **Room list view**
+      - **Room list view**
 
             - Clicking on the category will link the user to the room detail view.
 
-         - **Room details view**
+      - **Room details view**
 
             - When logged in, clicking on all elements working and clicking the "book the room" button will redirect to the booking confirmation view page.
 
-         - **Booking confirmation view**
+      - **Booking confirmation view**
 
             - The only clickable element on the page is the "Your bookings" link to the booking list view page.
 
-         - **Booking list view**
+      - **Booking list view**
 
            - The page has 2 major links. One for canceling and the other for editing a boking from the list. 
            - They are both hidden and will pop up once hovered over a specific booking. Both redirect to the right pages.
 
-         - **Booking update view**
+      - **Booking update view**
 
             - The page has a similar form to that of the room details view page, just the CTA is different, and "Update booking" and a redirect to the booking list view page instead of a confirmation page.
 
-         - **Booking update view**
+      - **Booking update view**
 
             - The page has one button called "Cancel your booking". Clicking it will cancel the booking and redirect the user to the booking list view.
+
 
 <br>
 
