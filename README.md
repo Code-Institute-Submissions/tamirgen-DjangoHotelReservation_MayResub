@@ -232,9 +232,6 @@ Instead, they will have links to register or to log in, in order to make a booki
 * [Am I Responsive?](http://ami.responsivedesign.is/#)
     - Am I Responsive was used in order to see responsive design throughout the process and to generate mockup imagery to be used.
 
-* [Responsive Design Checker](https://www.responsivedesignchecker.com/)
-    - Responsive Design Checker was used in the testing process to check responsiveness on various devices.
-
 * [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
     - Chrome DevTools was used during development process for code review and to test responsiveness.
 
