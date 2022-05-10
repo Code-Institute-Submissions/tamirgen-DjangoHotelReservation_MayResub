@@ -215,7 +215,7 @@ Instead, they will have links to register or to log in, in order to make a booki
 ---------------------
 
 ### Languages Used
-------------------
+
 * [HTML5](https://en.wikipedia.org/wiki/HTML5)
 * [CSS3](https://en.wikipedia.org/wiki/CSS)
 
@@ -230,8 +230,8 @@ Instead, they will have links to register or to log in, in order to make a booki
 * [GitHub](https://github.com/)
      - GitHub was used to store the project after pushing.
 
-<!-- * [Balsamiq](https://balsamiq.com/)
-     - Balsamiq was used to create the wireframes during the design phase of the project. -->
+* [Balsamiq](https://balsamiq.com/)
+     - Balsamiq was used to create the wireframes during the design phase of the project.
 
 * [Am I Responsive?](http://ami.responsivedesign.is/#)
     - Am I Responsive was used in order to see responsive design throughout the process and to generate mockup imagery to be used.
