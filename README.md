@@ -10,6 +10,10 @@ The Admin of the system can see a list of booked rooms and is able to cancel boo
 
 <br>
 
+### Wireframe 
+
+![Balsamiq](https://github.com/tamirgen/DjangoHotelReservation/blob/main/booking/assests/media/Mobile%20%26%20Desktop.png?raw=true)
+
 ## User Experience (UX)
 ----------------------
 
