@@ -442,7 +442,10 @@ Only signed-in users can book a room and see the booking list of their accounts.
 ## Bugs
 --------
 
-There were no bugs to fix.
+There were two bugs that I had:
+- When I inspected the app for a smaller screen I notice that the navbar does not show. The issue was that it was missing the toggler button, Once fixed, the issue was resolved.
+- In production, the CSS files were not loading. That was due to the fact that DEBUG was set to True. Changing it to False and pushing again fixed the issue.
+
 
 <br>
 
