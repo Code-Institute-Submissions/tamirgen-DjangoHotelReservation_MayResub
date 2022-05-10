@@ -478,10 +478,11 @@ Steps to deploy in local in environment:
 * Create an env.py file in the same level as your manage.py file.
 * In the file imprort os
 * Include in the file the following:
-os.environ['CLOUDINARY_URL'] = 
-os.environ['DATABASE_URL'] = 
-os.environ['SECRET_KEY'] = 
-Information can be found in Heroku. Find the app, open settings and click on " Reveal Config Vars".
+   - os.environ['CLOUDINARY_URL'] = 
+   - os.environ['DATABASE_URL'] = 
+   - os.environ['SECRET_KEY'] = 
+Information can be found in Heroku. 
+* Find the app, open settings and click on " Reveal Config Vars".
 * in the terminal run "pip list".
 If the list is empty, please reinstall requirements.txt file using "pip install -r requirments.txt" and after that "pip freeze > requirements.txt".
 
